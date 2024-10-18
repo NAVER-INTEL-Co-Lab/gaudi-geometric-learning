@@ -1,12 +1,11 @@
 # Gaudi-v2: For geometric deep learning
 
-
 This repository is designed for implementing and testing geometric deep learning functionalities and algorithms using Intel Gaudi-v2 devices.
 
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
-- [Content](#contents)
+- [Contents](#contents)
 
 ## Introduction
 Geometric deep learning is a rapidly growing field that focuses on extending deep learning techniques to non-Euclidean domains such as graphs.
