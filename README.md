@@ -11,8 +11,8 @@ In this repository, we aim to provide instructions for geometric deep learning u
 
 - [Introduction](#introduction)
 - [Preparation](#preparation)
+- [Tutorials and Examples](#tutorials_and_examples)
 - [Contents](#contents)
-- [Tutorials](#tutorials)
 
 ## Introduction
 
@@ -20,6 +20,8 @@ Geometric deep learning is a rapidly growing field that focuses on extending dee
 This repository aims to bridge the gap by providing support for Intel Gaudi-v2 devices, addressing the challenge that existing libraries like PyG (PyTorch Geometric) and DGL (Deep Graph Library) only support CUDA GPUs.
 
 ## Preparation
+
+In this section, we show what you should prepare for running code with PyG on Intel Gaudi-v2 devices.
 
 ### 1. Install PyTorch on Gaudi-v2
 
@@ -46,11 +48,21 @@ pip install torch_geometric
 
 See more instructions for the installation of PyG [here](https://pytorch-geometric.readthedocs.io/en/stable/install/installation.html).
 
-## Tutorials
+## Tutorials and Examples
+
+
 
 ### 1. PyG Official Tutorials
 
-In this part, we adapt and modify [PyG official tutorials](https://pytorch-geometric.readthedocs.io/en/stable/get_started/colabs.html) to be compatible to Intel Gaudi-v2 devices.
+In this part, we adapt and modify [PyG official tutorials](https://github.com/AntonioLonga/PytorchGeometricTutorial) to be compatible to Intel Gaudi-v2 devices.
+
+### 2. PyG Official Example
+
+In this part, we adapt and modify [PyG official examples](https://pytorch-geometric.readthedocs.io/en/stable/get_started/colabs.html) to be compatible to Intel Gaudi-v2 devices.
+
+### 3. Stanford CS224W Tutorials
+
+In this part, we adapt and modify [Stanford CS224W Tutorials](https://medium.com/stanford-cs224w) to be compatible to Intel Gaudi-v2 devices.
 
 
 ## Contents
