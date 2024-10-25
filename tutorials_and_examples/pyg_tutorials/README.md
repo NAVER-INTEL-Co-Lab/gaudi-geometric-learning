@@ -9,27 +9,33 @@ You can also find their video tutorials on [Youtube](https://www.youtube.com/use
 ### Tutorial 1: What is Geometric Deep Learning?
 
 Adaptation completed. See the [subfolder](Tutorial1/).
+See the official video [here](https://youtu.be/JtDgmmQ60x8).
 
 ### Tutorial 2: PyTorch basics
 
 Adaptation completed. See the [subfolder](Tutorial2/).
+See the official video [here](https://youtu.be/UHrhp2l_knU).
 
 ### Tutorial 3: Graph Attention Network GAT
 
 Adaptation completed. See the [subfolder](Tutorial3/).
+See the official video [here](https://youtu.be/CwsPoa7z2c8).
 
 ### Tutorial 4: Convolutional Layers - Spectral methods
 
 Adaptation completed. See the [subfolder](Tutorial4/).
+See the official video [here](https://youtu.be/Ghw-fp_2HFM).
 
 ### Tutorial 5: Aggregation Functions in GNNs
 
 Currently, we encounter `RuntimeError: Input sizes must be equal`.
 See the error messages [here](Tutorial5/error_html.pdf).
+See the official video [here](https://youtu.be/tGXovxQ7hKU).
 
 ### Tutorial 6: Graph Autoencoders and Variational Graph Autoencoders
 
 Adaptation completed. See the [subfolder](Tutorial6/).
+See the official video [here](https://youtu.be/qA6U4nIK62E).
 
 ### Tutorial 7: Adversarially regularized GAE and VGAE
 
