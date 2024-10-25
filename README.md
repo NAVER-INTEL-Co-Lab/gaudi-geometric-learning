@@ -11,8 +11,9 @@ In this repository, we aim to provide instructions for geometric deep learning u
 
 - [Introduction](#introduction)
 - [Preparation](#preparation)
-- [Tutorials and Examples](#tutorials_and_examples)
-- [Contents](#contents)
+- [Tutorials and Examples](#tutorials-and-examples)
+- [Benchmark Results](#benchmark-results)
+- [Technical Contents](#technical-contents)
 
 ## Introduction
 
@@ -48,28 +49,79 @@ pip install torch_geometric
 
 See more instructions for the installation of PyG [here](https://pytorch-geometric.readthedocs.io/en/stable/install/installation.html).
 
+### 3. Basic Steps to Adapt Code
+
+There are several basic steps to adapt code to be compatible to Intel Gaudi-v2 devices.
+
+The first step is to import the Intel Gaudi PyTorch framework:
+
+```Python
+import habana_frameworks.torch.core as htcore
+```
+
+The second step is to set the device as the Gaudi device:
+
+```Python
+device = torch.device("hpu")
+```
+
+The third step is to wrap the model in `torch.compile` function and set the backend to `hpu_backend`, after `model.train()`
+
+```Python
+model.train()
+model = torch.compile(model,backend="hpu_backend")
+```
+
+Finally, run the code in the Eager mode. To do this, you can either set the environment variable when running the code, e.g.,
+
+```shell
+PT_HPU_LAZY_MODE=0 python main.py
+```
+
+Or set the environment variable in the beginning of the code:
+
+```Python
+import os
+# Use the eager mode
+os.environ["PT_HPU_LAZY_MODE"] = "0"
+```
+
+See more instructions [here](https://docs.habana.ai/en/latest/PyTorch/Getting_Started_with_PyTorch_and_Gaudi/Getting_Started_with_PyTorch.html).
+See also the introduction of an automatic migration toolkit [here](https://docs.habana.ai/en/latest/PyTorch/PyTorch_Model_Porting/GPU_Migration_Toolkit/GPU_Migration_Toolkit.html).
+
 ## Tutorials and Examples
 
-
+In this section, 
 
 ### 1. PyG Official Tutorials
 
 In this part, we adapt and modify [PyG official tutorials](https://github.com/AntonioLonga/PytorchGeometricTutorial) to be compatible to Intel Gaudi-v2 devices.
+See the [subfolder](tutorials_and_examples/pyg_tutorials/) for more details.
 
 ### 2. PyG Official Example
 
 In this part, we adapt and modify [PyG official examples](https://pytorch-geometric.readthedocs.io/en/stable/get_started/colabs.html) to be compatible to Intel Gaudi-v2 devices.
+See the [subfolder](tutorials_and_examples/pyg_tutorials/) for more details.
 
 ### 3. Stanford CS224W Tutorials
 
 In this part, we adapt and modify [Stanford CS224W Tutorials](https://medium.com/stanford-cs224w) to be compatible to Intel Gaudi-v2 devices.
+See the [subfolder](tutorials_and_examples/stanford_cs224w/) for more details.
 
 
-## Contents
+## Benchmark Results
 
-Below are the detailed contents of this library.
 
-### Raw-PyTorch implementation of torch-sparse functionalities
+
+## Technical Contents
+
+Below are the technical contents of this library.
+
+### 1. Raw-PyTorch Implementation of Torch-Scatter Functionalities
+
+We implement main functionalities in the Torch Scatter library, which only supports CUDA GPUs.
+We implement them using raw Pytorch so that the implementation can be compatible to Intel Gaudi-v2 devices.
+
 
 - [x] `scatter_sum` / `scatter_add`
 - [x] `scatter_mean`
@@ -78,3 +130,8 @@ Below are the detailed contents of this library.
 - [x] `scatter_log_softmax`
 - [x] `scatter_logsumexp`
 - [x] `scatter_std`
+
+
+## Performance Optimization
+
+[Official optimization instructions](https://docs.habana.ai/en/latest/PyTorch/Model_Optimization_PyTorch/Optimization_Getting_Started.html)
