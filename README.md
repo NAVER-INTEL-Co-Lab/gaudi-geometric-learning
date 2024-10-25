@@ -37,6 +37,7 @@ docker pull vault.habana.ai/gaudi-docker/1.18.0/${OS}/habanalabs/pytorch-install
 docker run --name torch${PTV} -it --runtime=habana -e HABANA_VISIBLE_DEVICES=all -e OMPI_MCA_btl_vader_single_copy_mechanism=none --cap-add=sys_nice --net=host --ipc=host -v /home/irteamsu/data:/data vault.habana.ai/gaudi-docker/1.18.0/$OS/habanalabs/pytorch-installer-${PTV}:latest;
 ```
 
+Check the available docker list [here](https://vault.habana.ai/ui/native/gaudi-docker/).
 See more general instructions [here](https://docs.habana.ai/en/latest/PyTorch/Getting_Started_with_PyTorch_and_Gaudi/Getting_Started_with_PyTorch.html).
 
 ### 2. Install PyG (PyTorch Geometric)
