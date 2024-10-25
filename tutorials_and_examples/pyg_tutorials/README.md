@@ -6,58 +6,58 @@ You can also find their video tutorials on [Youtube](https://www.youtube.com/use
 
 ## Contents
 
-### Tutorial 1: What is Geometric Deep Learning?
+### ✅ Tutorial 1: What is Geometric Deep Learning? 
 
 Adaptation completed. See the [subfolder](Tutorial1/).
 See the official video [here](https://youtu.be/JtDgmmQ60x8).
 
-### Tutorial 2: PyTorch basics
+### ✅ Tutorial 2: PyTorch basics
 
 Adaptation completed. See the [subfolder](Tutorial2/).
 See the official video [here](https://youtu.be/UHrhp2l_knU).
 
-### Tutorial 3: Graph Attention Network GAT
+### ✅ Tutorial 3: Graph Attention Network GAT
 
 Adaptation completed. See the [subfolder](Tutorial3/).
 See the official video [here](https://youtu.be/CwsPoa7z2c8).
 
-### Tutorial 4: Convolutional Layers - Spectral methods
+### ✅ Tutorial 4: Convolutional Layers - Spectral methods
 
 Adaptation completed. See the [subfolder](Tutorial4/).
 See the official video [here](https://youtu.be/Ghw-fp_2HFM).
 
-### Tutorial 5: Aggregation Functions in GNNs
+### ❌ Tutorial 5: Aggregation Functions in GNNs
 
 Currently, we encounter `RuntimeError: Input sizes must be equal` and are debugging.
 See the error messages [here](Tutorial5/error_html.pdf).
 See the official video [here](https://youtu.be/tGXovxQ7hKU).
 
-### Tutorial 6: Graph Autoencoders and Variational Graph Autoencoders
+### ✅ Tutorial 6: Graph Autoencoders and Variational Graph Autoencoders
 
 Adaptation completed. See the [subfolder](Tutorial6/).
 See the official video [here](https://youtu.be/qA6U4nIK62E).
 
-### Tutorial 7: Adversarially regularized GAE and VGAE
+### ✅ Tutorial 7: Adversarially regularized GAE and VGAE
 
 Adaptation completed. See the [subfolder](Tutorial7/).
 See the official video [here](https://youtu.be/hZkLu2OaHD0).
 
-### Tutorial 8: Graph Generation
+### ✅ Tutorial 8: Graph Generation
 
 PDF only. See the [subfolder](Tutorial8/).
 See the official video [here](https://youtu.be/embpBq1gHAE).
 
-### Tutorial 9: Recurrent Graph Neural Networks Open In Colab
+### ✅ Tutorial 9: Recurrent Graph Neural Networks Open In Colab
 
 Adaptation completed. See the [subfolder](Tutorial9/).
 See the official video [here](https://youtu.be/v7TQ2DUoaBY).
 
-### Tutorial 10: DeepWalk and Node2Vec (Theory)
+### ✅ Tutorial 10: DeepWalk and Node2Vec (Theory)
 
 PDF only. See the [subfolder](Tutorial10/).
 See the official video [here](https://youtu.be/QZQBnl1QbCQ).
 
-### Tutorial 11: DeepWalk and Node2Vec (Practice)
+### ❌ Tutorial 11: DeepWalk and Node2Vec (Practice)
 
 Currently, we cannot run `Node2Vec` which depends on `torch_cluster`, while `torch_cluster` only supports CUDA GPUs.
 See the official video [here](https://youtu.be/5YOcpI3dB7I).
