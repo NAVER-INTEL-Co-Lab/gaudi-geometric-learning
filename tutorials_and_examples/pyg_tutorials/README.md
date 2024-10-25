@@ -4,6 +4,8 @@ The tutorials here are adapted from [PyG official tutorials](https://pytorch-geo
 The original source code can be found [here](https://github.com/AntonioLonga/PytorchGeometricTutorial).
 You can also find their video tutorials on [Youtube](https://www.youtube.com/user/94longa2112/featured) and at their official website [here](https://antoniolonga.github.io/Pytorch_geometric_tutorials/index.html).
 
+## Contents
+
 ### Tutorial 1: What is Geometric Deep Learning?
 
 ### Tutorial 2: PyTorch basics
@@ -15,7 +17,7 @@ You can also find their video tutorials on [Youtube](https://www.youtube.com/use
 ### Tutorial 5: Aggregation Functions in GNNs
 
 Currently, we encounter `RuntimeError: Input sizes must be equal`.
-See the error messages [here](Tutorial5/error.html).
+See the error messages [here](Tutorial5/error_html.pdf).
 
 ### Tutorial 6: Graph Autoencoders and Variational Graph Autoencoders
 
