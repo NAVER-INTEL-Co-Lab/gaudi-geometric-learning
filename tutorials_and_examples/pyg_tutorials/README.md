@@ -28,7 +28,7 @@ See the official video [here](https://youtu.be/Ghw-fp_2HFM).
 
 ### Tutorial 5: Aggregation Functions in GNNs
 
-Currently, we encounter `RuntimeError: Input sizes must be equal`.
+Currently, we encounter `RuntimeError: Input sizes must be equal` and are debugging.
 See the error messages [here](Tutorial5/error_html.pdf).
 See the official video [here](https://youtu.be/tGXovxQ7hKU).
 
@@ -39,13 +39,27 @@ See the official video [here](https://youtu.be/qA6U4nIK62E).
 
 ### Tutorial 7: Adversarially regularized GAE and VGAE
 
+Adaptation completed. See the [subfolder](Tutorial7/).
+See the official video [here](https://youtu.be/hZkLu2OaHD0).
+
 ### Tutorial 8: Graph Generation
+
+PDF only. See the [subfolder](Tutorial8/).
+See the official video [here](https://youtu.be/embpBq1gHAE).
 
 ### Tutorial 9: Recurrent Graph Neural Networks Open In Colab
 
+Adaptation completed. See the [subfolder](Tutorial9/).
+See the official video [here](https://youtu.be/v7TQ2DUoaBY).
+
 ### Tutorial 10: DeepWalk and Node2Vec (Theory)
 
+PDF only. See the [subfolder](Tutorial10/).
+See the official video [here](https://youtu.be/QZQBnl1QbCQ).
+
 ### Tutorial 11: DeepWalk and Node2Vec (Practice)
+
+
 
 ### Tutorial 12: Edge analysis Open In Colab
 
