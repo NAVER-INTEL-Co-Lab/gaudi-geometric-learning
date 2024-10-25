@@ -59,7 +59,8 @@ See the official video [here](https://youtu.be/QZQBnl1QbCQ).
 
 ### Tutorial 11: DeepWalk and Node2Vec (Practice)
 
-
+Currently, we cannot run `Node2Vec` which depends on `torch_cluster`, while `torch_cluster` only supports CUDA GPUs.
+See the official video [here](https://youtu.be/5YOcpI3dB7I).
 
 ### Tutorial 12: Edge analysis Open In Colab
 
