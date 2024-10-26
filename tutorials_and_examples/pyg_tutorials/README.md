@@ -86,15 +86,24 @@ See the official video [here](https://youtu.be/m1G7oS9hmwE).
 ### ❌ Tutorial 13: Metapath2vec
 
 Currently, we encounter `NotImplementedError: Could not run 'aten::_sparse_coo_tensor_with_dims_and_tensors' with arguments from the 'SparseHPU' backend.` and are debugging.
+However, we are able to adapt the code without sparse computation.
 See the error messages [here](Tutorial13/error.pdf).
 See the [subfolder](Tutorial13/).
 See the official video [here](https://youtu.be/GtPoGehuKYY).
 
-### Tutorial 14: Data handling in Pyg (part 1)
+### ❌ Tutorial 14: Data handling in Pyg (part 1)
 
+Currently, we cannot run `ClusterData` and `NeighborSampler`:
 
+- `ClusterData` requires either `pyg-lib` or `torch-sparse`.
+- `NeighborSampler` requires `SparseTensor`, which requires `torch-sparse`.
+See the error messages [here](Tutorial14/error.pdf).
+See the [subfolder](Tutorial14/).
+See the official video [here](https://youtu.be/Vz5bT8Xw6Dc).
 
 ### Tutorial 15: Data handling in Pyg (part 2)
+
+
 
 ### Tutorial 16: Special guest talk - Matthias Fey
 
