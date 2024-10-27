@@ -3,7 +3,7 @@
 In this repository, we aim to provide instructions for geometric deep learning using Intel Gaudi-v2 devices. Specifically, we aim to provide the following contents:
 
 - Efficient implementation of geometric deep learning functionalities and models that is compatible to Intel Gaudi-v2 devices.
-- Detailed instructions and automatic tools for code adapatation to make existing code on geometric deep learning compatible to Intel Gaudi-v2 devices.
+- Detailed instructions and automatic tools for code adaptation to make existing code on geometric deep learning compatible to Intel Gaudi-v2 devices.
 - Comprehensive benchmarks and tools for analyzing the performance of geometric deep learning models on Intel Gaudi-v2 devices.
 - Rich documentation with concrete examples and tutorials.
 

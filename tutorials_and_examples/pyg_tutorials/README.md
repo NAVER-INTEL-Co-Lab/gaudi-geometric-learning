@@ -101,13 +101,23 @@ See the error messages [here](Tutorial14/error.pdf).
 See the [subfolder](Tutorial14/).
 See the official video [here](https://youtu.be/Vz5bT8Xw6Dc).
 
-### Tutorial 15: Data handling in Pyg (part 2)
+### ✅ Tutorial 15: Data handling in Pyg (part 2)
 
+Adaptation completed.
+See the [subfolder](Tutorial15/).
+See the official video [here](https://youtu.be/Q5T-JdyVCfs).
 
+### ❌ Tutorial 16: Graph pooling: DIFFPOOL
 
-### Tutorial 16: Special guest talk - Matthias Fey
+The original tutorial has bugs.
+See the official video [here](https://youtu.be/Uqc3O3-oXxM).
 
-### Tutorial 17: Special guest talk - Sergei Ivanov
+### Special guest talk 1: Matthias Fey
 
-### Tutorial 18: Graph pooling: DIFFPOOL
+No code.
+See the official video [here](https://youtu.be/MA6VH7Vwtb4).
 
+### Special guest talk 2: Sergei Ivanov
+
+No code.
+See the official video [here](https://youtu.be/hX297pr1RHE).
