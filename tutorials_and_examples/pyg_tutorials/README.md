@@ -34,7 +34,7 @@ See the official video [here](https://youtu.be/Ghw-fp_2HFM).
 
 Currently, we encounter `RuntimeError: Input sizes must be equal` and are debugging.
 See the error messages [here](Tutorial5/error.pdf).
-See the [subfolder](Tutorial4/).
+See the [subfolder](Tutorial5/).
 See the official video [here](https://youtu.be/tGXovxQ7hKU).
 
 ### ✅ Tutorial 6: Graph Autoencoders and Variational Graph Autoencoders
