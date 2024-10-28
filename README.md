@@ -14,6 +14,7 @@ In this repository, we aim to provide instructions for geometric deep learning u
 - [Tutorials and Examples](#tutorials-and-examples)
 - [Benchmark Results](#benchmark-results)
 - [Technical Contents](#technical-contents)
+- [Performance Optimization](#performance-optimization)
 
 ## Introduction
 
