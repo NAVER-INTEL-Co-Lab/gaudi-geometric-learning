@@ -102,7 +102,7 @@ See the [subfolder](tutorials_and_examples/pyg_tutorials/) for more details.
 ### 2. PyG Official Example
 
 In this part, we adapt and modify [PyG official examples](https://pytorch-geometric.readthedocs.io/en/stable/get_started/colabs.html) to be compatible to Intel Gaudi-v2 devices.
-See the [subfolder](tutorials_and_examples/pyg_tutorials/) for more details.
+See the [subfolder](tutorials_and_examples/pyg_examples/) for more details.
 
 ### 3. Stanford CS224W Tutorials
 
