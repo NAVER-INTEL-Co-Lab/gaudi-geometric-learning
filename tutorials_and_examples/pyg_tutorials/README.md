@@ -109,7 +109,19 @@ See the official video [here](https://youtu.be/Q5T-JdyVCfs).
 
 ### ❌ Tutorial 16: Graph pooling: DIFFPOOL
 
-The original tutorial has bugs.
+Currently, we encounter
+
+```plaintext
+RuntimeError: [Rank:0] FATAL ERROR :: MODULE:PT_BRIDGE Exception in Lowering thread...
+[Rank:0] FATAL ERROR :: MODULE:PT_EAGER HabanaLaunchOpPT Run returned exception....
+Graph compile failed. synStatus=synStatus 26 [Generic failure]. 
+[Rank:0] Habana exception raised from compile at graph.cpp:599
+[Rank:0] Habana exception raised from LaunchRecipe at graph_exec.cpp:558
+```
+
+and are debugging.
+See the error messages [here](Tutorial16/error.pdf).
+See the [subfolder](Tutorial16/).
 See the official video [here](https://youtu.be/Uqc3O3-oXxM).
 
 ### Special guest talk 1: Matthias Fey
