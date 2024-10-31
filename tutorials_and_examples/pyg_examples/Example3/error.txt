@@ -1,0 +1,71 @@
+W1031 05:30:23.025000 139934562694272 torch/_dynamo/variables/tensor.py:754] [9/0] Graph break from `Tensor.item()`, consider setting:
+W1031 05:30:23.025000 139934562694272 torch/_dynamo/variables/tensor.py:754] [9/0]     torch._dynamo.config.capture_scalar_outputs = True
+W1031 05:30:23.025000 139934562694272 torch/_dynamo/variables/tensor.py:754] [9/0] or:
+W1031 05:30:23.025000 139934562694272 torch/_dynamo/variables/tensor.py:754] [9/0]     env TORCHDYNAMO_CAPTURE_SCALAR_OUTPUTS=1
+W1031 05:30:23.025000 139934562694272 torch/_dynamo/variables/tensor.py:754] [9/0] to include these operations in the captured graph.
+W1031 05:30:23.025000 139934562694272 torch/_dynamo/variables/tensor.py:754] [9/0] 
+
+Unexpected exception formatting exception. Falling back to standard exception
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.10/site-packages/IPython/core/interactiveshell.py", line 3577, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "/tmp/ipykernel_2592681/3194425433.py", line 38, in <module>
+    train()
+  File "/tmp/ipykernel_2592681/3194425433.py", line 16, in train
+    out = model(data.x, data.edge_index, data.batch)  # Perform a single forward pass.
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1556, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1565, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/_dynamo/eval_frame.py", line 433, in _fn
+    return fn(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1556, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1565, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/tmp/ipykernel_2592681/3667256741.py", line 18, in forward
+    x = self.conv1(x, edge_index)
+  File "/tmp/ipykernel_2592681/3667256741.py", line 20, in torch_dynamo_resume_in_forward_at_18
+    x = self.conv2(x, edge_index)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1556, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1565, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch_geometric/nn/conv/gcn_conv.py", line 241, in forward
+    edge_index, edge_weight = gcn_norm(  # yapf: disable
+  File "/usr/local/lib/python3.10/dist-packages/torch_geometric/nn/conv/gcn_conv.py", line 99, in gcn_norm
+    edge_index, edge_weight = add_remaining_self_loops(
+  File "/usr/local/lib/python3.10/dist-packages/torch_geometric/utils/loop.py", line 650, in add_remaining_self_loops
+    edge_index = edge_index[:, mask]
+RuntimeError: [Rank:0] FATAL ERROR :: MODULE:PT_BRIDGE Exception in Lowering thread...
+[Rank:0] FATAL ERROR :: MODULE:PT_EAGER HabanaLaunchOpPT Run returned exception....
+synNodeCreateWithId failed for node: concat with synStatus 1 [Invalid argument]. .
+[Rank:0] Habana exception raised from add_node at graph.cpp:507
+[Rank:0] Habana exception raised from LaunchRecipe at graph_exec.cpp:558
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.10/site-packages/IPython/core/interactiveshell.py", line 2168, in showtraceback
+    stb = self.InteractiveTB.structured_traceback(
+  File "/root/.local/lib/python3.10/site-packages/IPython/core/ultratb.py", line 1457, in structured_traceback
+    return FormattedTB.structured_traceback(
+  File "/root/.local/lib/python3.10/site-packages/IPython/core/ultratb.py", line 1348, in structured_traceback
+    return VerboseTB.structured_traceback(
+  File "/root/.local/lib/python3.10/site-packages/IPython/core/ultratb.py", line 1195, in structured_traceback
+    formatted_exception = self.format_exception_as_a_whole(etype, evalue, etb, number_of_lines_of_context,
+  File "/root/.local/lib/python3.10/site-packages/IPython/core/ultratb.py", line 1085, in format_exception_as_a_whole
+    self.get_records(etb, number_of_lines_of_context, tb_offset) if etb else []
+  File "/root/.local/lib/python3.10/site-packages/IPython/core/ultratb.py", line 1182, in get_records
+    res = list(stack_data.FrameInfo.stack_data(etb, options=options))[tb_offset:]
+  File "/root/.local/lib/python3.10/site-packages/stack_data/core.py", line 597, in stack_data
+    yield from collapse_repeated(
+  File "/root/.local/lib/python3.10/site-packages/stack_data/utils.py", line 77, in collapse_repeated
+    for is_highlighted, group in itertools.groupby(
+  File "/root/.local/lib/python3.10/site-packages/stack_data/utils.py", line 45, in highlight_unique
+    counts = Counter(lst)
+  File "/usr/lib/python3.10/collections/__init__.py", line 577, in __init__
+    self.update(iterable, **kwds)
+  File "/usr/lib/python3.10/collections/__init__.py", line 670, in update
+    _count_elements(self, iterable)
+TypeError: unhashable type: 'slice'
