@@ -54,4 +54,10 @@ Currently, we cannot run `ClusterData`, which requires either `pyg-lib` or `torc
 See the error messages [here](Example7/error.pdf).
 See the [subfolder](Example7/).
 
+### ✅ Example 8: Node Classification (with W&B)
+
+Adaptation completed.
+See the [subfolder](Example8/).
+
+
 
