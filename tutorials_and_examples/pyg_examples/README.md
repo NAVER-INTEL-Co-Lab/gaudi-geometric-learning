@@ -59,5 +59,19 @@ See the [subfolder](Example7/).
 Adaptation completed.
 See the [subfolder](Example8/).
 
+### ❌ Example 9: Graph Classification with PyG and W&B
 
+Currently, we encounter
 
+```plaintext
+RuntimeError: [Rank:0] FATAL ERROR :: MODULE:PT_BRIDGE Exception in Lowering thread...
+[Rank:0] FATAL ERROR :: MODULE:PT_EAGER HabanaLaunchOpPT Run returned exception....
+synNodeCreateWithId failed for node: concat with synStatus 1 [Invalid argument]. .
+[Rank:0] Habana exception raised from add_node at graph.cpp:507
+[Rank:0] Habana exception raised from LaunchRecipe at graph_exec.cpp:558
+```
+
+and are debugging.
+See the error messages [here](Example9/error.pdf).
+See the similar error in [Example 3](#-example-3-graph-classification).
+See the [subfolder](Example9/).
