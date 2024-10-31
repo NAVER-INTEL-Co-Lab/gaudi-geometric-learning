@@ -36,3 +36,12 @@ See the [subfolder](Example3/).
 Currently, we cannot run `ClusterData`, which requires either `pyg-lib` or `torch-sparse`, while both `pyg-lib` and `torch-sparse` only support CUDA GPUs.
 See the error messages [here](Example4/error.pdf).
 See the [subfolder](Example4/).
+
+### ❌ Example 5: Point Cloud Classification
+
+Currently, we cannot run `knn_graph`, which requires `torch-cluster`, while `torch-cluster` only supports CUDA GPUs.
+See the error messages [here](Example5/error.pdf).
+See the [subfolder](Example5/).
+
+
+
