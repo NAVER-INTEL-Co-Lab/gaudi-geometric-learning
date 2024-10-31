@@ -31,3 +31,8 @@ Seemingly, the problem is caused by the function `gcn_norm` since it works when 
 See the error messages [here](Example3/error.pdf).
 See the [subfolder](Example3/).
 
+### ❌ Example 4: Scaling GNNs
+
+Currently, we cannot run `ClusterData`, which requires either `pyg-lib` or `torch-sparse`, while both `pyg-lib` and `torch-sparse` only support CUDA GPUs.
+See the error messages [here](Example4/error.pdf).
+See the [subfolder](Example4/).
