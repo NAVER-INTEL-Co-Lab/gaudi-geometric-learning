@@ -43,3 +43,15 @@ Currently, we cannot run `knn_graph`, which requires `torch-cluster`, while `tor
 See the error messages [here](Example5/error.pdf).
 See the [subfolder](Example5/).
 
+### ✅ Example 6: GNN Explanation
+
+Adaptation completed.
+See the [subfolder](Example6/).
+
+### ❌ Example 7: Aggregation Package
+
+Currently, we cannot run `ClusterData`, which requires either `pyg-lib` or `torch-sparse`, while both `pyg-lib` and `torch-sparse` only support CUDA GPUs.
+See the error messages [here](Example7/error.pdf).
+See the [subfolder](Example7/).
+
+
