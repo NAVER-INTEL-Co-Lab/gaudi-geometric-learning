@@ -18,7 +18,8 @@ See the [subfolder](Example2/).
 
 Adaptation completed.
 See the [subfolder](Example3/).
-Notes: The code is runnable only without `model = torch.compile(model, backend="hpu_backend")`.
+
+**Notes:** The code is runnable only without `model = torch.compile(model, backend="hpu_backend")`.
 Otherwise, we encounter
 
 ```plaintext
