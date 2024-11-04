@@ -14,9 +14,12 @@ See the [subfolder](Example1/).
 Adaptation completed.
 See the [subfolder](Example2/).
 
-### ❌ Example 3: Graph Classification
+### ✅ Example 3: Graph Classification
 
-Currently, we encounter
+Adaptation completed.
+See the [subfolder](Example3/).
+Notes: The code is runnable only without `model = torch.compile(model, backend="hpu_backend")`.
+Otherwise, we encounter
 
 ```plaintext
 RuntimeError: [Rank:0] FATAL ERROR :: MODULE:PT_BRIDGE Exception in Lowering thread...
@@ -27,9 +30,8 @@ synNodeCreateWithId failed for node: concat with synStatus 1 [Invalid argument].
 ```
 
 and are debugging.
-Seemingly, the problem is caused by the function `gcn_norm` since it works when we set `normalize = False` for `GCNConv`.
+Seemingly, the problem is caused by the function `gcn_norm` since it works well with `model = torch.compile(model, backend="hpu_backend")` when we set `normalize = False` for `GCNConv`.
 See the error messages [here](Example3/error.pdf).
-See the [subfolder](Example3/).
 
 ### ❌ Example 4: Scaling GNNs
 
