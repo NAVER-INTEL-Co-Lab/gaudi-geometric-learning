@@ -126,7 +126,14 @@ After removing `model = torch.compile(model, backend="hpu_backend")`, it works e
 
 Currently, we cannot run `NeighborSampler`, which requires either `pyg-lib` or `torch-sparse`, while both `pyg-lib` and `torch-sparse` only support CUDA GPUs.
 See the error messages [here](Example10/error.pdf).
+
 See the [subfolder](Example10/).
+
+See the related issue on Pytorch Cluster GitHub repo [here](https://github.com/rusty1s/pytorch_cluster/issues/230).
+
+See the related discussion on PyG GitHub repo [here](https://github.com/pyg-team/pytorch_geometric/discussions/9760).
+
+See the related question on Intel Gaudi forum [here]().
 
 ### ❌ Example 11: Link Regression on Movielens
 
@@ -135,4 +142,7 @@ Currently, we encounter `AttributeError: module 'habana_frameworks.torch.hpu' ha
 - The [Sentence Transformers](https://sbert.net/index.html) module tries to call `habana_frameworks.torch.hpu.wrap_in_hpu_graph`, which seemingly does not exist.
 
 See the error messages [here](Example11/error.pdf).
+
 See the [subfolder](Example11/).
+
+See the related question on Intel Gaudi forum [here]().
