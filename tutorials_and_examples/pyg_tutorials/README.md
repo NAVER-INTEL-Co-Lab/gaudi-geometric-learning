@@ -199,6 +199,7 @@ See the related question on Intel Gaudi forum [here](https://forum.habana.ai/t/r
 
 #### Tutorial 16: Debugging Information
 
+Seemingly the errors are caused by `torch_geometric.nn.DenseGCNConv`.
 The same errors appear even when we only include the training. See the training-only code [here](Tutorial16/Tutorial16_train_only.ipynb).
 
 The code works well on CPU. See the code on CPU [here](Tutorial16/Tutorial16_cpu.ipynb).
