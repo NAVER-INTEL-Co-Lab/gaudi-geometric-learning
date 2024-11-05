@@ -31,7 +31,7 @@ synNodeCreateWithId failed for node: concat with synStatus 1 [Invalid argument].
 and are debugging. See the error messages [here](Example3/error.pdf).
 
 **Workaround:** We are able to adapt the code by removing `model = torch.compile(model, backend="hpu_backend")`.
-See such adapted code [here](Example3/3_Graph_Classification.ipynb).
+See such adapted code [here](Example3/3_Graph_Classification_no_compile.ipynb).
 See also the debugging information [below](#example-3-debugging-information).
 
 See the [subfolder](Example3/).
@@ -41,6 +41,7 @@ See the related question on Intel Gaudi forum [here]().
 #### Example 3: Debugging Information
 
 Seemingly, the problem is caused by the function `gcn_norm` since it works well when we set `normalize = False` for `GCNConv`.
+See the code without normalization [here](Example3/3_Graph_Classification_no_normalize.ipynb).
 After removing `model = torch.compile(model, backend="hpu_backend")`, it works even with `normalize = True`.
 
 ### ❌ Example 4: Scaling GNNs
@@ -49,11 +50,23 @@ Currently, we cannot run `ClusterData`, which requires either `pyg-lib` or `torc
 See the error messages [here](Example4/error.pdf).
 See the [subfolder](Example4/).
 
+See the related issue on Pytorch Cluster GitHub repo [here](https://github.com/rusty1s/pytorch_cluster/issues/230).
+
+See the related discussion on PyG GitHub repo [here](https://github.com/pyg-team/pytorch_geometric/discussions/9760).
+
+See the related question on Intel Gaudi forum [here]().
+
 ### ❌ Example 5: Point Cloud Classification
 
 Currently, we cannot run `knn_graph`, which requires `torch-cluster`, while `torch-cluster` only supports CUDA GPUs.
 See the error messages [here](Example5/error.pdf).
 See the [subfolder](Example5/).
+
+See the related issue on Pytorch Cluster GitHub repo [here](https://github.com/rusty1s/pytorch_cluster/issues/230).
+
+See the related discussion on PyG GitHub repo [here](https://github.com/pyg-team/pytorch_geometric/discussions/9760).
+
+See the related question on Intel Gaudi forum [here]().
 
 ### ✅ Example 6: GNN Explanation
 
@@ -65,6 +78,12 @@ See the [subfolder](Example6/).
 Currently, we cannot run `ClusterData`, which requires either `pyg-lib` or `torch-sparse`, while both `pyg-lib` and `torch-sparse` only support CUDA GPUs.
 See the error messages [here](Example7/error.pdf).
 See the [subfolder](Example7/).
+
+See the related issue on Pytorch Cluster GitHub repo [here](https://github.com/rusty1s/pytorch_cluster/issues/230).
+
+See the related discussion on PyG GitHub repo [here](https://github.com/pyg-team/pytorch_geometric/discussions/9760).
+
+See the related question on Intel Gaudi forum [here]().
 
 ### ✅ Example 8: Node Classification (with W&B)
 
