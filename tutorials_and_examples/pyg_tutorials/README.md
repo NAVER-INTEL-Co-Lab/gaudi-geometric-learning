@@ -40,29 +40,45 @@ See the [subfolder](Tutorial4/).
 
 See the official video [here](https://youtu.be/Ghw-fp_2HFM).
 
-### ❌ Tutorial 5: Aggregation Functions in GNNs
+### 🟡 Tutorial 5: Aggregation Functions in GNNs
 
 Currently, we encounter `RuntimeError: Input sizes must be equal` and are debugging.
 See the error messages [here](Tutorial5/error.pdf).
+
+**Workaround:** We are able to adapt the code by
+
+1. Removing `model = torch.compile(model, backend="hpu_backend")` and
+2. Moving the evaluation part to CPU (while keeping the training part on HPU).
+
+See such adapted code [here](Tutorial5/Tutorial5_no_compile_val_cpu.ipynb).
+See also the debugging information [below](#tutorial-5-debugging-information).
 
 See the [subfolder](Tutorial5/).
 
 See the official video [here](https://youtu.be/tGXovxQ7hKU).
 
+See the related question on Intel Gaudi forum [here](https://forum.habana.ai/t/runtimeerror-input-sizes-must-be-equal-when-doing-loss-backward-during-the-training-of-a-gnn/1331).
+
 #### Tutorial 5: Debugging Information
+
+The same errors appear even when we only include the training. See the training-only code [here](Tutorial5/Tutorial5_train_only.ipynb).
 
 The code works well on CPU. See the code on CPU [here](Tutorial5/Tutorial5_cpu.ipynb).
 
-After removing `model = torch.compile(model, backend="hpu_backend")`, we encounter
+After removing `model = torch.compile(model, backend="hpu_backend")`, we encounter other errors
 
 ```plaintext
 [Rank:0] FATAL ERROR :: MODULE:PT_BRIDGE Exception in Lowering thread...
 synStatus=1 [Invalid argument] Node reshape  failed.
 ```
 
+See the compile-free code [here](Tutorial5/Tutorial5_no_compile.ipynb).
 See the error messages [here](Tutorial5/error_no_compile.pdf).
 
-See the related question on Intel Gaudi forum [here](https://forum.habana.ai/t/runtimeerror-input-sizes-must-be-equal-when-doing-loss-backward-during-the-training-of-a-gnn/1331).
+However, it is possible to run the code with only training after removing `model = torch.compile(model, backend="hpu_backend")`. See the training-only compile-free code [here](Tutorial5/Tutorial5_no_compile_train_only.ipynb).
+
+**Analysis:** Seemingly, after removing `model = torch.compile(model, backend="hpu_backend")`, the error appears when we conduct `model.forward()` after using `model.eval()`, while it is okay when the model is in the training mode, i.e., after `model.train()`.
+Our workaround above also supports this analysis. See also the similar situations for [Tutorial 16](#-tutorial-16-graph-pooling-diffpool).
 
 ### ✅ Tutorial 6: Graph Autoencoders and Variational Graph Autoencoders
 
@@ -209,7 +225,7 @@ After removing `model = torch.compile(model, backend="hpu_backend")`, we encount
 However, it is possible to run the code with only training after removing `model = torch.compile(model, backend="hpu_backend")`. See the training-only compile-free code [here](Tutorial16/Tutorial16_no_compile_train_only.ipynb).
 
 **Analysis:** Seemingly, after removing `model = torch.compile(model, backend="hpu_backend")`, the error appears when we conduct `model.forward()` after using `model.eval()`, while it is okay when the model is in the training mode, i.e., after `model.train()`.
-Our workaround above also supports this analysis.
+Our workaround above also supports this analysis. See also the similar situations for [Tutorial 5](#-tutorial-5-aggregation-functions-in-gnns).
 
 ### Special guest talk 1: Matthias Fey
 
