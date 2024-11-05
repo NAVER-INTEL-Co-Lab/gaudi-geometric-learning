@@ -71,6 +71,7 @@ See the related question on Intel Gaudi forum [here]().
 ### ✅ Example 6: GNN Explanation
 
 Adaptation completed.
+
 See the [subfolder](Example6/).
 
 ### ❌ Example 7: Aggregation Package
@@ -88,9 +89,10 @@ See the related question on Intel Gaudi forum [here]().
 ### ✅ Example 8: Node Classification (with W&B)
 
 Adaptation completed.
+
 See the [subfolder](Example8/).
 
-### ❌ Example 9: Graph Classification with PyG and W&B
+### 🟡 Example 9: Graph Classification with PyG and W&B
 
 Currently, we encounter
 
@@ -105,7 +107,20 @@ synNodeCreateWithId failed for node: concat with synStatus 1 [Invalid argument].
 and are debugging.
 See the error messages [here](Example9/error.pdf).
 See the similar error in [Example 3](#-example-3-graph-classification).
+
+**Workaround:** We are able to adapt the code by removing `model = torch.compile(model, backend="hpu_backend")`.
+See such adapted code [here]().
+See also the debugging information [below](#example-9-debugging-information).
+
 See the [subfolder](Example9/).
+
+See the related question on Intel Gaudi forum [here]().
+
+#### Example 9: Debugging Information
+
+Seemingly, the problem is caused by the function `gcn_norm` since it works well when we set `normalize = False` for `GCNConv`.
+See the code without normalization [here]().
+After removing `model = torch.compile(model, backend="hpu_backend")`, it works even with `normalize = True`.
 
 ### ❌ Example 10: Link Prediction on MovieLens
 
