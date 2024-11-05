@@ -16,7 +16,7 @@ See the [subfolder](Tutorial1/).
 
 See the official video [here](https://youtu.be/JtDgmmQ60x8).
 
-### ✅ Tutorial 2: PyTorch basics
+### ✅ Tutorial 2: PyTorch Basics
 
 Adaptation completed.
 
@@ -49,7 +49,7 @@ See the [subfolder](Tutorial5/).
 
 See the official video [here](https://youtu.be/tGXovxQ7hKU).
 
-#### Some debugging information
+#### Tutorial 5: Debugging Information
 
 The code works well on CPU. See the code on CPU [here](Tutorial5/Tutorial5_cpu.ipynb).
 
@@ -72,7 +72,7 @@ See the [subfolder](Tutorial6/).
 
 See the official video [here](https://youtu.be/qA6U4nIK62E).
 
-### ✅ Tutorial 7: Adversarially regularized GAE and VGAE
+### ✅ Tutorial 7: Adversarially Regularized GAE and VGAE
 
 Adaptation completed.
 
@@ -119,9 +119,10 @@ See the related discussion on PyG GitHub repo [here](https://github.com/pyg-team
 
 See the related question on Intel Gaudi forum [here]().
 
-### ❌ Tutorial 12: Edge analysis Open In Colab
+### ✅❌ Tutorial 12: Edge Analysis
 
 For "GAE for link prediction", adaptation completed.
+
 For "Node2Vec for label prediction", currently, we cannot run `Node2Vec` which depends on `torch_cluster`, while `torch_cluster` only supports CUDA GPUs.
 The problem is the same as in [Tutorial 11](#-tutorial-11-deepwalk-and-node2vec-practice).
 See the error messages [here](Tutorial11/error.pdf).
@@ -130,12 +131,14 @@ See the [subfolder](Tutorial12/).
 
 See the official video [here](https://youtu.be/m1G7oS9hmwE).
 
-### ❌ Tutorial 13: Metapath2vec
+### 🟡 Tutorial 13: Metapath2vec
 
 Currently, we encounter `NotImplementedError: Could not run 'aten::_sparse_coo_tensor_with_dims_and_tensors' with arguments from the 'SparseHPU' backend.` and are debugging.
 Seemingly, sparse operations have not been supported by Guadi yet.
-However, we are able to adapt the code without sparse computation.
 See the error messages [here](Tutorial13/error.pdf).
+
+**Workaround:** We are able to adapt the code without sparse computation, i.e., with only dense computation.
+See the dense-only code [here](Tutorial13/Tutorial13_dense.ipynb).
 
 See the [subfolder](Tutorial13/).
 
@@ -143,7 +146,7 @@ See the official video [here](https://youtu.be/GtPoGehuKYY).
 
 See the related question on Intel Gaudi forum [here](https://forum.habana.ai/t/notimplementederror-could-not-run-aten-sparse-coo-tensor-with-dims-and-tensors-with-arguments-from-the-sparsehpu-backend/1330).
 
-### ❌ Tutorial 14: Data handling in Pyg (part 1)
+### ❌ Tutorial 14: Data Handling in PyG (Part 1)
 
 Currently, we cannot run `ClusterData` and `NeighborSampler`:
 
@@ -151,12 +154,13 @@ Currently, we cannot run `ClusterData` and `NeighborSampler`:
 - `NeighborSampler` requires `SparseTensor`, which requires `torch-sparse`.
 
 See the error messages [here](Tutorial14/error.pdf).
+The problem is the same as in [Tutorial 11](#-tutorial-11-deepwalk-and-node2vec-practice).
 
 See the [subfolder](Tutorial14/).
 
 See the official video [here](https://youtu.be/Vz5bT8Xw6Dc).
 
-### ✅ Tutorial 15: Data handling in Pyg (part 2)
+### ✅ Tutorial 15: Data Handling in PyG (Part 2)
 
 Adaptation completed.
 
@@ -164,7 +168,7 @@ See the [subfolder](Tutorial15/).
 
 See the official video [here](https://youtu.be/Q5T-JdyVCfs).
 
-### ❌ Tutorial 16: Graph pooling: DIFFPOOL
+### 🟡 Tutorial 16: Graph pooling: DIFFPOOL
 
 Currently, we encounter
 
@@ -179,9 +183,32 @@ Graph compile failed. synStatus=synStatus 26 [Generic failure].
 and are debugging.
 See the error messages [here](Tutorial16/error.pdf).
 
+**Workaround:** We are able to adapt the code by
+
+1. Removing `model = torch.compile(model, backend="hpu_backend")` and
+2. Moving the evaluation part to CPU (while keeping the training part on HPU).
+
+See such adapted code [here](Tutorial16/Tutorial16_no_compile_val_cpu.ipynb).
+See also the debugging information [below](#tutorial-16-debugging-information).
+
 See the [subfolder](Tutorial16/).
 
 See the official video [here](https://youtu.be/Uqc3O3-oXxM).
+
+See the related question on Intel Gaudi forum [here](https://forum.habana.ai/t/runtimeerror-rank-0-fatal-error-module-pt-bridge-exception-in-lowering-thread/1329).
+
+#### Tutorial 16: Debugging Information
+
+The same errors appear even when we only include the training. See the training-only code [here](Tutorial16/Tutorial16_train_only.ipynb).
+
+The code works well on CPU. See the code on CPU [here](Tutorial16/Tutorial16_cpu.ipynb).
+
+After removing `model = torch.compile(model, backend="hpu_backend")`, we encounter another error `RuntimeError: synStatus=1 [Invalid argument] Node reshape  failed`. See the compile-free code [here](Tutorial16/Tutorial16_no_compile.ipynb). See the error messages [here](Tutorial16/error_no_compile.pdf).
+
+However, it is possible to run the code with only training after removing `model = torch.compile(model, backend="hpu_backend")`. See the training-only compile-free code [here](Tutorial16/Tutorial16_no_compile_train_only.ipynb).
+
+**Analysis:** Seemingly, after removing `model = torch.compile(model, backend="hpu_backend")`, the error appears when we conduct `model.forward()` after using `model.eval()`, while it is okay when the model is in the training mode, i.e., after `model.train()`.
+Our workaround above also supports this analysis.
 
 ### Special guest talk 1: Matthias Fey
 
