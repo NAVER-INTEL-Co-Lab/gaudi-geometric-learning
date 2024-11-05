@@ -184,7 +184,7 @@ See the [subfolder](Tutorial15/).
 
 See the official video [here](https://youtu.be/Q5T-JdyVCfs).
 
-### 🟡 Tutorial 16: Graph pooling: DIFFPOOL
+### 🟡 Tutorial 16: Graph pooling (DIFFPOOL)
 
 Currently, we encounter
 

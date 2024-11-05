@@ -7,20 +7,18 @@ The examples here are adapted from [PyG official examples](https://pytorch-geome
 ### ✅ Example 1: Introduction
 
 Adaptation completed.
+
 See the [subfolder](Example1/).
 
 ### ✅ Example 2: Node Classification
 
 Adaptation completed.
+
 See the [subfolder](Example2/).
 
-### ✅ Example 3: Graph Classification
+### 🟡 Example 3: Graph Classification
 
-Adaptation completed.
-See the [subfolder](Example3/).
-
-**Notes:** The code is runnable only without `model = torch.compile(model, backend="hpu_backend")`.
-Otherwise, we encounter
+Currently, we encounter
 
 ```plaintext
 RuntimeError: [Rank:0] FATAL ERROR :: MODULE:PT_BRIDGE Exception in Lowering thread...
@@ -30,9 +28,20 @@ synNodeCreateWithId failed for node: concat with synStatus 1 [Invalid argument].
 [Rank:0] Habana exception raised from LaunchRecipe at graph_exec.cpp:558
 ```
 
-and are debugging.
-Seemingly, the problem is caused by the function `gcn_norm` since it works well with `model = torch.compile(model, backend="hpu_backend")` when we set `normalize = False` for `GCNConv`.
-See the error messages [here](Example3/error.pdf).
+and are debugging. See the error messages [here](Example3/error.pdf).
+
+**Workaround:** We are able to adapt the code by removing `model = torch.compile(model, backend="hpu_backend")`.
+See such adapted code [here](Example3/3_Graph_Classification.ipynb).
+See also the debugging information [below](#example-3-debugging-information).
+
+See the [subfolder](Example3/).
+
+See the related question on Intel Gaudi forum [here]().
+
+#### Example 3: Debugging Information
+
+Seemingly, the problem is caused by the function `gcn_norm` since it works well when we set `normalize = False` for `GCNConv`.
+After removing `model = torch.compile(model, backend="hpu_backend")`, it works even with `normalize = True`.
 
 ### ❌ Example 4: Scaling GNNs
 
