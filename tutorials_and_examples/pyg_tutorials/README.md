@@ -130,8 +130,6 @@ See the [subfolder](Tutorial12/).
 
 See the official video [here](https://youtu.be/m1G7oS9hmwE).
 
-See the related question on Intel Gaudi forum [here](https://forum.habana.ai/t/notimplementederror-could-not-run-aten-sparse-coo-tensor-with-dims-and-tensors-with-arguments-from-the-sparsehpu-backend/1330).
-
 ### ❌ Tutorial 13: Metapath2vec
 
 Currently, we encounter `NotImplementedError: Could not run 'aten::_sparse_coo_tensor_with_dims_and_tensors' with arguments from the 'SparseHPU' backend.` and are debugging.
@@ -142,6 +140,8 @@ See the error messages [here](Tutorial13/error.pdf).
 See the [subfolder](Tutorial13/).
 
 See the official video [here](https://youtu.be/GtPoGehuKYY).
+
+See the related question on Intel Gaudi forum [here](https://forum.habana.ai/t/notimplementederror-could-not-run-aten-sparse-coo-tensor-with-dims-and-tensors-with-arguments-from-the-sparsehpu-backend/1330).
 
 ### ❌ Tutorial 14: Data handling in Pyg (part 1)
 
