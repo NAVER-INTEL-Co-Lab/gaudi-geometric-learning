@@ -37,6 +37,21 @@ See the error messages [here](Tutorial5/error.pdf).
 See the [subfolder](Tutorial5/).
 See the official video [here](https://youtu.be/tGXovxQ7hKU).
 
+#### Some debugging information
+
+The code works well on CPU. See the code [here](Tutorial5/Tutorial5_cpu.ipynb).
+
+After removing `model = torch.compile(model, backend="hpu_backend")`, we encounter
+
+```plaintext
+[Rank:0] FATAL ERROR :: MODULE:PT_BRIDGE Exception in Lowering thread...
+synStatus=1 [Invalid argument] Node reshape  failed.
+```
+
+See the error messages [here](Tutorial5/error_no_compile.pdf).
+
+See the question on Intel Gaudi forum [here](https://forum.habana.ai/t/runtimeerror-input-sizes-must-be-equal-when-doing-loss-backward-during-the-training-of-a-gnn/1331).
+
 ### ✅ Tutorial 6: Graph Autoencoders and Variational Graph Autoencoders
 
 Adaptation completed.
