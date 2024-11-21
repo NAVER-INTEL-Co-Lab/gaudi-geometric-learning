@@ -120,10 +120,12 @@ See the [subfolder](Tutorial10/).
 
 See the official video [here](https://youtu.be/QZQBnl1QbCQ).
 
-### ❌ Tutorial 11: DeepWalk and Node2Vec (Practice)
+### 🟡 Tutorial 11: DeepWalk and Node2Vec (Practice)
 
 Currently, we cannot run `Node2Vec` which depends on `torch_cluster`, while `torch_cluster` only supports CUDA GPUs.
 See the error messages [here](Tutorial11/error.pdf).
+
+**Workaround:** We are able to adapt the code by building the realted functions (specifically, random walk) in `torch_cluster` from C source files. See more details [here](../../raw_torch_for_scatter/random_walk/). Also, sparse computation is not supported on Gaudi yet, so we need to use only dense computation.
 
 See the [subfolder](Tutorial11/).
 
@@ -133,7 +135,9 @@ See the related issue on Pytorch Cluster GitHub repo [here](https://github.com/r
 
 See the related discussion on PyG GitHub repo [here](https://github.com/pyg-team/pytorch_geometric/discussions/9760).
 
-See the related question on Intel Gaudi forum [here]().
+See the related question on Intel Gaudi forum [here](https://forum.habana.ai/t/functionalities-that-require-pyg-lib-torch-sparse-torch-cluster/1363).
+
+**Other problems:** The loss does not decrease when we run the code on Gaudi but correctly decreases when we run the code on CPUs. After some debugging, we identified the problem was at `torch.nn.embedding`. See a toy example [here](./Tutorial11/nn_embedding_test.ipynb). See the related question on Intel Gaudi forum [here]().
 
 ### ✅❌ Tutorial 12: Edge Analysis
 
