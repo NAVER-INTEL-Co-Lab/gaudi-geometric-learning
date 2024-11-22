@@ -8,9 +8,9 @@ find_package(Torch REQUIRED)
 add_definitions(-DWITH_PYTHON)
 find_package(Python3 COMPONENTS Development)
 
-file(GLOB HEADERS csrc/*.h)
+file(GLOB HEADERS *.h)
 
-file(GLOB OPERATOR_SOURCES csrc/rw.cpp csrc/cpu/rw_cpu.* csrc/cpu/utils.h) 
+file(GLOB OPERATOR_SOURCES rw.cpp cpu/rw_cpu.* cpu/utils.h) 
 
 add_library(random_walk SHARED rw.cpp cpu/rw_cpu.cpp)
 target_link_libraries(random_walk "${TORCH_LIBRARIES}")
