@@ -139,12 +139,12 @@ See the related question on Intel Gaudi forum [here](https://forum.habana.ai/t/f
 
 **Other problems:** The loss does not decrease when we run the code on Gaudi but correctly decreases when we run the code on CPUs. After some debugging, we identified the problem was at `torch.nn.embedding`. See a toy example [here](./Tutorial11/nn_embedding_test.ipynb). See the related question on Intel Gaudi forum [here]().
 
-### ✅❌ Tutorial 12: Edge Analysis
+### ✅🟡 Tutorial 12: Edge Analysis
 
 For "GAE for link prediction", adaptation completed.
 
 For "Node2Vec for label prediction", currently, we cannot run `Node2Vec` which depends on `torch_cluster`, while `torch_cluster` only supports CUDA GPUs.
-The problem is the same as in [Tutorial 11](#-tutorial-11-deepwalk-and-node2vec-practice).
+The problem is the same as in [Tutorial 11](#-tutorial-11-deepwalk-and-node2vec-practice), and a similar workaround (i.e., building random walk from C source files and using only dense operations) can be used.
 See the error messages [here](Tutorial11/error.pdf).
 
 See the [subfolder](Tutorial12/).
