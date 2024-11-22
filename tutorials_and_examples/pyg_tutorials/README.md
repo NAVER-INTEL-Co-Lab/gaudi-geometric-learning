@@ -125,7 +125,7 @@ See the official video [here](https://youtu.be/QZQBnl1QbCQ).
 Currently, we cannot run `Node2Vec` which depends on `torch_cluster`, while `torch_cluster` only supports CUDA GPUs.
 See the error messages [here](Tutorial11/error.pdf).
 
-**Workaround:** We are able to adapt the code by building the realted functions (specifically, random walk) in `torch_cluster` from C source files. See more details [here](../../raw_torch_for_scatter/random_walk/). Also, sparse computation is not supported on Gaudi yet, so we need to use only dense computation.
+**Workaround:** We are able to adapt the code by building the realted functions (specifically, random walk) in `torch_cluster` from C source files. See more details [here](../../funcs/random_walk/). Also, sparse computation is not supported on Gaudi yet, so we need to use only dense computation.
 
 See the [subfolder](Tutorial11/).
 
@@ -166,15 +166,19 @@ See the official video [here](https://youtu.be/GtPoGehuKYY).
 
 See the related question on Intel Gaudi forum [here](https://forum.habana.ai/t/notimplementederror-could-not-run-aten-sparse-coo-tensor-with-dims-and-tensors-with-arguments-from-the-sparsehpu-backend/1330).
 
-### ❌ Tutorial 14: Data Handling in PyG (Part 1)
+### 🟡 Tutorial 14: Data Handling in PyG (Part 1)
 
 Currently, we cannot run `ClusterData` and `NeighborSampler`:
 
 - `ClusterData` requires either `pyg-lib` or `torch-sparse`.
 - `NeighborSampler` requires `SparseTensor`, which requires `torch-sparse`.
 
+**Workaround (ClusterData):** Similar to Tutorials 11 and 12, we are able to adapt the code by building the realted functions (specifically, METIS parition) in `torch_sparse` from C source files. See more details [here](../../funcs/metis_partition/).
+
+**Workaround (NeighborSampler):** We re-implement `NeighborSampler` using raw PyTorch with only dense computation.
+See more details [here](../../funcs/neighbor_sampler/).
+
 See the error messages [here](Tutorial14/error.pdf).
-The problem is the same as in [Tutorial 11](#-tutorial-11-deepwalk-and-node2vec-practice).
 
 See the [subfolder](Tutorial14/).
 
