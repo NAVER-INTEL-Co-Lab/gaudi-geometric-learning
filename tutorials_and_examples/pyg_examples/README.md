@@ -36,7 +36,7 @@ See also the debugging information [below](#example-3-debugging-information).
 
 See the [subfolder](Example3/).
 
-See the related question on Intel Gaudi forum [here]().
+See the related question on Intel Gaudi forum [here](https://forum.habana.ai/t/gcnconv-fails-with-normalization/1336).
 
 #### Example 3: Debugging Information
 
@@ -44,17 +44,22 @@ Seemingly, the problem is caused by the function `gcn_norm` since it works well 
 See the code without normalization [here](Example3/3_Graph_Classification_no_normalize.ipynb).
 After removing `model = torch.compile(model, backend="hpu_backend")`, it works even with `normalize = True`.
 
-### ❌ Example 4: Scaling GNNs
+### 🟡 Example 4: Scaling GNNs
 
 Currently, we cannot run `ClusterData`, which requires either `pyg-lib` or `torch-sparse`, while both `pyg-lib` and `torch-sparse` only support CUDA GPUs.
 See the error messages [here](Example4/error.pdf).
+
+**Workaround (ClusterData):** We are able to adapt the code by building the realted functions (specifically, METIS parition) in `torch_sparse` from C source files. See more details [here](../../funcs/metis_partition/).
+
+**Workaround (GCNConv):** We are able to adapt the code by removing `model = torch.compile(model, backend="hpu_backend")`. See more details above in [Example 3](#-example-3-graph-classification).
+
 See the [subfolder](Example4/).
 
 See the related issue on Pytorch Cluster GitHub repo [here](https://github.com/rusty1s/pytorch_cluster/issues/230).
 
 See the related discussion on PyG GitHub repo [here](https://github.com/pyg-team/pytorch_geometric/discussions/9760).
 
-See the related question on Intel Gaudi forum [here]().
+See the related question on Intel Gaudi forum [here](https://forum.habana.ai/t/functionalities-that-require-pyg-lib-torch-sparse-torch-cluster/1363).
 
 ### ❌ Example 5: Point Cloud Classification
 
@@ -66,7 +71,7 @@ See the related issue on Pytorch Cluster GitHub repo [here](https://github.com/r
 
 See the related discussion on PyG GitHub repo [here](https://github.com/pyg-team/pytorch_geometric/discussions/9760).
 
-See the related question on Intel Gaudi forum [here]().
+See the related question on Intel Gaudi forum [here](https://forum.habana.ai/t/functionalities-that-require-pyg-lib-torch-sparse-torch-cluster/1363).
 
 ### ✅ Example 6: GNN Explanation
 
@@ -74,17 +79,20 @@ Adaptation completed.
 
 See the [subfolder](Example6/).
 
-### ❌ Example 7: Aggregation Package
+### 🟡 Example 7: Aggregation Package
 
 Currently, we cannot run `ClusterData`, which requires either `pyg-lib` or `torch-sparse`, while both `pyg-lib` and `torch-sparse` only support CUDA GPUs.
 See the error messages [here](Example7/error.pdf).
+
+**Workaround:** We are able to adapt the code by building the realted functions (specifically, METIS parition) in `torch_sparse` from C source files. See more details [here](../../funcs/metis_partition/).
+
 See the [subfolder](Example7/).
 
 See the related issue on Pytorch Cluster GitHub repo [here](https://github.com/rusty1s/pytorch_cluster/issues/230).
 
 See the related discussion on PyG GitHub repo [here](https://github.com/pyg-team/pytorch_geometric/discussions/9760).
 
-See the related question on Intel Gaudi forum [here]().
+See the related question on Intel Gaudi forum [here](https://forum.habana.ai/t/functionalities-that-require-pyg-lib-torch-sparse-torch-cluster/1363).
 
 ### ✅ Example 8: Node Classification (with W&B)
 
@@ -109,17 +117,17 @@ See the error messages [here](Example9/error.pdf).
 See the similar error in [Example 3](#-example-3-graph-classification).
 
 **Workaround:** We are able to adapt the code by removing `model = torch.compile(model, backend="hpu_backend")`.
-See such adapted code [here]().
+See such adapted code [here](Example9/9_Graph_Classification_with_PyG_and_W&B_no_compile.ipynb).
 See also the debugging information [below](#example-9-debugging-information).
 
 See the [subfolder](Example9/).
 
-See the related question on Intel Gaudi forum [here]().
+See the related question on Intel Gaudi forum [here](https://forum.habana.ai/t/gcnconv-fails-with-normalization/1336).
 
 #### Example 9: Debugging Information
 
 Seemingly, the problem is caused by the function `gcn_norm` since it works well when we set `normalize = False` for `GCNConv`.
-See the code without normalization [here]().
+See the code without normalization [here](./Example9/9_Graph_Classification_with_PyG_and_W&B_no_normalize.ipynb).
 After removing `model = torch.compile(model, backend="hpu_backend")`, it works even with `normalize = True`.
 
 ### ❌ Example 10: Link Prediction on MovieLens
@@ -133,7 +141,7 @@ See the related issue on Pytorch Cluster GitHub repo [here](https://github.com/r
 
 See the related discussion on PyG GitHub repo [here](https://github.com/pyg-team/pytorch_geometric/discussions/9760).
 
-See the related question on Intel Gaudi forum [here]().
+See the related question on Intel Gaudi forum [here](https://forum.habana.ai/t/functionalities-that-require-pyg-lib-torch-sparse-torch-cluster/1363).
 
 ### ❌ Example 11: Link Regression on Movielens
 
@@ -145,4 +153,4 @@ See the error messages [here](Example11/error.pdf).
 
 See the [subfolder](Example11/).
 
-See the related question on Intel Gaudi forum [here]().
+See the related question on Intel Gaudi forum [here](https://forum.habana.ai/t/attributeerror-module-habana-frameworks-torch-hpu-has-no-attribute-wrap-in-hpu-graph/1362).

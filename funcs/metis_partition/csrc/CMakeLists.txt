@@ -16,12 +16,6 @@ file(GLOB OPERATOR_SOURCES *.* cpu/*.*)
 
 add_library(${PROJECT_NAME} SHARED ${OPERATOR_SOURCES})
 
-# target_link_libraries(${PROJECT_NAME} PRIVATE ${TORCH_LIBRARIES})
-# target_link_libraries(${PROJECT_NAME} PRIVATE Python3::Python)
-# target_include_directories(${PROJECT_NAME} PUBLIC ${METIS_INCLUDE_DIRS})
-# target_link_libraries(${PROJECT_NAME} PUBLIC ${METIS_LIBRARIES})
-# target_link_libraries(${PROJECT_NAME} PRIVATE metis)
-
 # Explicit linking order matters
 target_link_libraries(${PROJECT_NAME} 
     PRIVATE
@@ -50,29 +44,6 @@ set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS
 target_include_directories(${PROJECT_NAME} INTERFACE
   "$<BUILD_INTERFACE:${HEADERS}>"
   $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
-
-# include(GNUInstallDirs)
-# include(CMakePackageConfigHelpers)
-
-# install(TARGETS ${PROJECT_NAME}
-#   EXPORT TorchSparseTargets
-#   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-#   )
-
-# install(EXPORT TorchSparseTargets
-#   NAMESPACE TorchSparse::
-#   DESTINATION ${TORCHSPARSE_CMAKECONFIG_INSTALL_DIR})
-
-# install(FILES ${HEADERS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME})
-# install(FILES
-#   csrc/cpu/convert_cpu.h
-#   csrc/cpu/diag_cpu.h
-#   csrc/cpu/metis_cpu.h
-#   csrc/cpu/rw_cpu.h
-#   csrc/cpu/saint_cpu.h
-#   csrc/cpu/sample_cpu.h
-#   csrc/cpu/spmm_cpu.h
-#   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/cpu)
 
 # Ensure C++17 for the target
 set_target_properties(${PROJECT_NAME} PROPERTIES 

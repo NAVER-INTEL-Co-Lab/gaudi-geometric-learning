@@ -1,4 +1,4 @@
-# Build the shared library for random walk from C source
+# Build the shared library for knn from C source
 
 Build the C source files
 
@@ -14,11 +14,11 @@ make
 Load the shared library
 
 ```python
-torch.ops.load_library("PATH/TO/RANDOM_WALK/csrc/build/librandom_walk.so")
+torch.ops.load_library("PATH/TO/KNN/csrc/build/libknn_graph.so")
 ```
 
 Then you can use
 
 ```python
-torch.ops.torch_cluster.random_walk
+torch.ops.torch_cluster.knn
 ```

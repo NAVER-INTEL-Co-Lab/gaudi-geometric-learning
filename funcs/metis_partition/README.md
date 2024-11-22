@@ -22,6 +22,7 @@ Build the C source files
 ```shell
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 export WITH_METIS=1
+cd csrc
 mkdir build
 cd build
 export CMAKE_PREFIX_PATH=$(python3 -c "import torch; print(torch.utils.cmake_prefix_path)")
