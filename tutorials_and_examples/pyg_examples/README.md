@@ -146,10 +146,14 @@ Seemingly, the problem is caused by the function `gcn_norm` since it works well 
 See the code without normalization [here](./Example9/9_Graph_Classification_with_PyG_and_W&B_no_normalize.ipynb).
 After removing `model = torch.compile(model, backend="hpu_backend")`, it works even with `normalize = True`.
 
-### ❌ Example 10: Link Prediction on MovieLens
+### 🟡 Example 10: Link Prediction on MovieLens
 
 Currently, we cannot run `NeighborSampler`, which requires either `pyg-lib` or `torch-sparse`, while both `pyg-lib` and `torch-sparse` only support CUDA GPUs.
 See the error messages [here](Example10/error.pdf).
+
+**Workaround (NeighborSampler):** We are able to adapt the code by building the realted functions (specifically, "neighbor sample") in `torch_sparse` from C source files. See more details [here](../../funcs/neighbor_sample/).
+
+**Workaround (GCNConv):** We are able to adapt the code by removing `model = torch.compile(model, backend="hpu_backend")`. See more details above in [Example 3](#-example-3-graph-classification).
 
 See the [subfolder](Example10/).
 
