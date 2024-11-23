@@ -73,6 +73,22 @@ See the related discussion on PyG GitHub repo [here](https://github.com/pyg-team
 
 See the related question on Intel Gaudi forum [here](https://forum.habana.ai/t/functionalities-that-require-pyg-lib-torch-sparse-torch-cluster/1363).
 
+#### Example 5: Debugging Information
+
+We manage to build the required `knn` operation from C source files.
+However, we encounter new errors
+
+```plaintext
+RuntimeError: [Rank:0] FATAL ERROR :: MODULE:PT_BRIDGE Exception in Lowering thread...
+[Rank:0] FATAL ERROR :: MODULE:PT_EAGER HabanaLaunchOpPT Run returned exception....
+synNodeCreateWithId failed for node: concat with synStatus 1 [Invalid argument]. .
+[Rank:0] Habana exception raised from add_node at graph.cpp:507
+[Rank:0] Habana exception raised from LaunchRecipe at graph_exec.cpp:558
+```
+
+and are debugging.
+See the similar error in [Example 3](#-example-3-graph-classification).
+
 ### ✅ Example 6: GNN Explanation
 
 Adaptation completed.
