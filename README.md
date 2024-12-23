@@ -93,7 +93,7 @@ See also the introduction of an automatic migration toolkit [here](https://docs.
 
 ## Tutorials and Examples
 
-In this section, 
+In this section, we provide tutorials and examples for geometric deep learning with Intel Gaudi-v2 devices.
 
 ### 1. PyG Official Tutorials
 
@@ -110,20 +110,26 @@ See the [subfolder](tutorials_and_examples/pyg_examples/) for more details.
 In this part, we adapt and modify [Stanford CS224W Tutorials](https://medium.com/stanford-cs224w) to be compatible to Intel Gaudi-v2 devices.
 See the [subfolder](tutorials_and_examples/stanford_cs224w/) for more details.
 
-
 ## Benchmark Results
 
+In this section, we provide benchmark results for geometric deep learning models on Intel Gaudi-v2 devices.
 
+TODO: This section will showcase the benchmark results comparing Intel Gaudi-v2 devices with other hardware platforms (e.g., NVIDIA GPUs) for various geometric deep learning models and tasks. The benchmarks will include:
 
-## Technical Contents
+- Training time comparisons
+- Memory usage analysis
+- Cost-performance ratio evaluation
+- Scaling efficiency with different batch sizes
+- Model inference latency measurements
 
-Below are the technical contents of this library.
+## Implmented Functionalities
+
+In this section, we provide implementations of geometric deep learning functionalities that are compatible to Intel Gaudi-v2 devices.
 
 ### 1. Raw-PyTorch Implementation of Torch-Scatter Functionalities
 
 We implement main functionalities in the Torch Scatter library, which only supports CUDA GPUs.
 We implement them using raw Pytorch so that the implementation can be compatible to Intel Gaudi-v2 devices.
-
 
 - [x] `scatter_sum` / `scatter_add`
 - [x] `scatter_mean`
@@ -132,7 +138,6 @@ We implement them using raw Pytorch so that the implementation can be compatible
 - [x] `scatter_log_softmax`
 - [x] `scatter_logsumexp`
 - [x] `scatter_std`
-
 
 ## Performance Optimization
 
