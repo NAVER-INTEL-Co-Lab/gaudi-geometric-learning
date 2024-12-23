@@ -163,7 +163,7 @@ See the related discussion on PyG GitHub repo [here](https://github.com/pyg-team
 
 See the related question on Intel Gaudi forum [here](https://forum.habana.ai/t/functionalities-that-require-pyg-lib-torch-sparse-torch-cluster/1363).
 
-### ❌ Example 11: Link Regression on Movielens
+### 🟡 Example 11: Link Regression on Movielens
 
 Currently, we encounter `AttributeError: module 'habana_frameworks.torch.hpu' has no attribute 'wrap_in_hpu_graph'` and are debugging.
 
@@ -171,6 +171,10 @@ Currently, we encounter `AttributeError: module 'habana_frameworks.torch.hpu' ha
 
 See the error messages [here](Example11/error.pdf).
 
+**Workaround:** The function `wrap_in_hpu_graph` is in `habana_frameworks/torch/hpu/graphs.py` but the functions there are imported in `__init__.py` only when `is_lazy()` is True. We are able to adapt the code by manually modifying `habana_frameworks/torch/hpu/__init__.py` by removing the condition `if is_lazy()` and it works now.
+
 See the [subfolder](Example11/).
 
 See the related question on Intel Gaudi forum [here](https://forum.habana.ai/t/attributeerror-module-habana-frameworks-torch-hpu-has-no-attribute-wrap-in-hpu-graph/1362).
+
+See the related question on Intel Gaudi forum [here](https://forum.habana.ai/t/gcnconv-fails-with-normalization/1336).
