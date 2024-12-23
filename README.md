@@ -13,7 +13,7 @@ In this repository, we aim to provide instructions for geometric deep learning u
 - [Preparation](#preparation)
 - [Tutorials and Examples](#tutorials-and-examples)
 - [Benchmark Results](#benchmark-results)
-- [Technical Contents](#technical-contents)
+- [Implemented Functionalities](#implmented-functionalities)  
 - [Performance Optimization](#performance-optimization)
 
 ## Introduction
