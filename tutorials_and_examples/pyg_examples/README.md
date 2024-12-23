@@ -176,5 +176,3 @@ See the error messages [here](Example11/error.pdf).
 See the [subfolder](Example11/).
 
 See the related question on Intel Gaudi forum [here](https://forum.habana.ai/t/attributeerror-module-habana-frameworks-torch-hpu-has-no-attribute-wrap-in-hpu-graph/1362).
-
-See the related question on Intel Gaudi forum [here](https://forum.habana.ai/t/gcnconv-fails-with-normalization/1336).
