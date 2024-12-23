@@ -87,7 +87,7 @@ synNodeCreateWithId failed for node: concat with synStatus 1 [Invalid argument].
 ```
 
 and are debugging.
-See the similar error in [Example 3](#-example-3-graph-classification).
+See the related question on Intel Gaudi forum [here](https://forum.habana.ai/t/transferring-knn-results-from-cpu-to-hpu-breaks-back-propagation/1408).
 
 ### ✅ Example 6: GNN Explanation
 
