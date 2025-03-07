@@ -13,7 +13,7 @@ In this repository, we aim to provide instructions for geometric deep learning u
 - [Preparation](#preparation)
 - [Tutorials and Examples](#tutorials-and-examples)
 - [Benchmark Results](#benchmark-results)
-- [Implemented Functionalities](#implmented-functionalities)  
+- [Implemented Functionalities](#implemented-functionalities)  
 - [Performance Optimization](#performance-optimization)
 
 ## Introduction
@@ -122,7 +122,7 @@ TODO: This section will showcase the benchmark results comparing Intel Gaudi-v2 
 - Scaling efficiency with different batch sizes
 - Model inference latency measurements
 
-## Implmented Functionalities
+## Implemented Functionalities
 
 In this section, we provide implementations of geometric deep learning functionalities that are compatible to Intel Gaudi-v2 devices.
 
